@@ -1,0 +1,11 @@
+
+  <taco-detail [taco]="selectedTaco" *ngIf="selectedTaco"></taco-detail>
+  <h2>My Tacos</h2>
+<ul class="heroes">
+  <li *ngFor="let t of tacos" (click)="onSelect(t)" [class.selected]="t === selectedTaco" [routerLink="['/detail', t.id]" class="col-1-4"> 
+    <span class="badge">{{t.id}}</span> {{t.name}}
+  </li>
+</ul>
+<button (click)="gotoDetail()">View Details</button>
+
+

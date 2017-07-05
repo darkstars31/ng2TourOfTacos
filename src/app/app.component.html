@@ -2,13 +2,9 @@
   <h1>
     {{title}}
   </h1>
-  <taco-detail [taco]="selectedTaco" *ngIf="selectedTaco"></taco-detail>
-  <h2>My Tacos</h2>
-<ul class="heroes">
-  <li *ngFor="let t of tacos" (click)="onSelect(t)" [class.selected]="t === selectedTaco"> 
-    <span class="badge">{{t.id}}</span> {{t.name}}
-  </li>
-</ul>
+  <nav>
+        <a routerLink="/dashboard">Dashboard</a>
+        <a routerLink="/tacos">Tacos</a>
+  </nav>
+  <router-outlet></router-outlet>
 </div>
-
-
