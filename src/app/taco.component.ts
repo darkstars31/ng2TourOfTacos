@@ -12,10 +12,6 @@ import { Taco } from './taco';
 export class TacoComponent implements OnInit {
   tacos: Taco[];
   selectedTaco: Taco;
-  taco : Taco = {
-    id: 1,
-    name: 'Super Spicy'
-  };
 
   constructor(private tacoService: TacoService, private router: Router) { }
 
