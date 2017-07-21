@@ -6,4 +6,11 @@
 </ul>
 <button (click)="gotoDetail()">View Details</button>
 
+<div>
+  <label>Taco name:</label> <input #tacoName />
+  <button (click)="add(tacoName.value); tacoName.value=''">
+    Add
+  </button>
+</div>
+
 

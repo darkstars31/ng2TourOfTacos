@@ -5,10 +5,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module'
 import { TacoComponent } from './taco.component';
 import { DashboardComponent } from './dashboard.component';
 import { TacoDetailComponent } from './taco-detail.component'
 import { TacoService } from './taco.service';
+
+// Imports for loading & configuring the in-memory web api
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -18,14 +23,10 @@ import { TacoService } from './taco.service';
     DashboardComponent
   ],
   imports: [
-    BrowserModule,,
+    BrowserModule,
     HttpModule,
-    RouterModule.forRoot([ 
-      {        path: '',                  redirectTo: '/dashboard',        pathMatch: 'full'      },
-      {        path: 'tacos',             component: TacoComponent       }, 
-      {        path: 'dashboard',         component: DashboardComponent    }, 
-      {        path: 'detail/:id',        component: TacoDetailComponent      }
-    ]),
+    AppRoutingModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
     FormsModule
   ],
   providers: [
@@ -33,4 +34,5 @@ import { TacoService } from './taco.service';
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

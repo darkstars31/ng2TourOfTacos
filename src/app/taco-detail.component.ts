@@ -30,6 +30,11 @@ export class TacoDetailComponent implements OnInit {
     
   }
 
+  save(): void {
+    this.TacoService.update(this.taco)
+    .then(() => this.goBack());
+  } 
+
   goBack(): void {
     this.location.back();
   }
